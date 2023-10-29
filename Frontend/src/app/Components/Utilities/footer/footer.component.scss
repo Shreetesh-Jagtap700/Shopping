@@ -1,0 +1,40 @@
+.footer {
+    position: relative;
+     left: 0;
+     bottom: 0;
+     width: 100%;
+     padding: 40px 55px 0px 55px;
+     background-color: black;
+     gap: 82px;
+    
+   } 
+   
+   .exclusive{
+       font-family: Inter;
+   font-size: 24px;
+   font-style: normal;
+   font-weight: 700;
+   line-height: 24px; /* 100% */
+   letter-spacing: 0.72px;
+   color: white;
+   }
+   
+   .subscribe{
+       color: var(--Text, #FAFAFA);
+       /* Title/20PX Medium */
+       font-family: Poppins;
+       font-size: 20px;
+       font-style: normal;
+       font-weight: 500;
+       line-height: 28px; /* 140% */
+   }
+   
+   .offer{
+       color: var(--Text, #FAFAFA);
+   /* Title/16PX Regular */
+   font-family: Poppins;
+   font-size: 16px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: 24px; /* 150% */
+   }
