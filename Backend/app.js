@@ -3,12 +3,21 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var mongoose = require('mongoose')
+var cors = require('cors')
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
+app.use(cors());
 
+var databasepath = 'mongodb+srv://marvellous:shreetesh@e-comcluster.shwukg9.mongodb.net/?retryWrites=true&w=majority'
+mongoose.connect(databasepath).then(()=>{
+  console.log("Database connection is successful");
+}).catch((err)=>{
+  console.log(err);
+})
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
