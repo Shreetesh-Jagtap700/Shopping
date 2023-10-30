@@ -18,14 +18,25 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
+var bodyParser = require('body-parser')
+const mongoose = require('mongoose');
+var cors = require('cors')
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use(cors())
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
 });
+
+var databasepath = 'mongodb+srv://marvellous:shreetesh@e-comcluster.shwukg9.mongodb.net/?retryWrites=true&w=majority'
+mongoose.connect(databasepath).then(()=>{
+  console.log("Database connection is successful");
+}).catch((err)=>{
+  console.log(err);
+})
 
 // error handler
 app.use(function(err, req, res, next) {
