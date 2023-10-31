@@ -1,19 +1,20 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var mongoose = require('mongoose')
-var cors = require('cors')
+require('dotenv').config()
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const mongoose = require('mongoose')
+const cors = require('cors')
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
-var app = express();
+const app = express();
 app.use(cors());
 
-var databasepath = 'mongodb+srv://marvellous:shreetesh@e-comcluster.shwukg9.mongodb.net/?retryWrites=true&w=majority'
-mongoose.connect(databasepath).then(()=>{
+const DB_URI = process.env.DB_URI
+mongoose.connect(DB_URI).then(()=>{
   console.log("Database connection is successful");
 }).catch((err)=>{
   console.log(err);

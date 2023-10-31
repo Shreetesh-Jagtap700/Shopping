@@ -3,8 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomepageComponent } from './Components/Pages/homepage/homepage.component';
 import { CartComponent } from './Components/Pages/cart/cart.component';
 import { SignupComponent } from './Components/Pages/signup/signup.component';
-import { AboutComponent } from './Components/Utilities/about/about.component';
-import { ContactComponent } from './Components/Utilities/contact/contact.component';
+import { AboutComponent } from './Components/Pages/about/about.component';
+import { ContactComponent } from './Components/Pages/contact/contact.component';
 
 const routes: Routes = [
   {path:'home',component:HomepageComponent},
